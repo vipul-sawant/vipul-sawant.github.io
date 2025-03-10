@@ -1,0 +1,48 @@
+.education-section {
+    padding: 50px 0;
+}
+
+.education-title {
+    /* color: #333; Dark gray for a simple look */
+    color: #FECDA6 !important; /* Dark gray for a simple look */
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Cards with rounded edges */
+.education-card {
+    /* background: #f8f9fa; Light background */
+    background:#3F5170 !important; /* Light background */
+    /* color: #333; */
+    color: #FECDA6;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px !important; /* Slightly rounded edges */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+
+    max-width: 50vw !important;
+    margin: 25px auto !important;
+}
+
+/* Image Styling */
+.education-image {
+    width: 90px; /* Keeps it balanced */
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #ddd; /* Light border for structure */
+    background-color: white;
+}
+
+/* Typography */
+.degree {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FECDA6;
+}
+
+.duration, .details {
+    font-size: 1rem;
+    /* color: #555; */
+    color: #FECDA6;
+}

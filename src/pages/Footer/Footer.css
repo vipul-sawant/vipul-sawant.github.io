@@ -1,0 +1,50 @@
+/* Footer Background & Styling */
+.footer {
+    background: #47597E; /* Darker than the background for contrast */
+    color: #F8F9FA;
+    padding: 15px 0;
+    text-align: center;
+    /* margin-top: 20px; */
+    padding-top: 5px;
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 1rem;
+    color: #FECDA6; /* Warm Beige */
+}
+
+/* Social Media Icons */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Icon Styling */
+.footer-icon {
+    font-size: 1.5rem;
+    color: #FECDA6; /* Warm Beige */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.footer-icon:hover {
+    transform: scale(1.2);
+    color: #E6B57A; /* Slightly darker beige on hover */
+}
+/* Sticky Footer */
+/* Default Footer (Not Sticky) */
+.footer {
+    background: #47597E;
+    color: #F8F9FA;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Sticky Footer when Content is Small */
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
