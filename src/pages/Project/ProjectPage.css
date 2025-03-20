@@ -1,10 +1,10 @@
-/* Medium-tone background for a balanced look */
-.project-section {
-    /* padding: 80px 20px; */
-    padding: 80px 20px;
-    background: #607EAA; /* Slate Blue */
-    color: #F8F9FA; /* Soft White */
-    text-align: center;
+/* Ensures projects are stacked in rows */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
 }
 
 /* Title styling */
@@ -13,64 +13,16 @@
     font-weight: bold;
     color: #FECDA6; /* Warm Beige */
     margin-bottom: 30px;
+    text-align: center;
 }
-
-/* Grid layout for projects */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/* Ensures the project row stretches to match the tallest card */
+.project-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Makes all cards in a row the same height */
     gap: 20px;
-    max-width: 1100px;
-    margin: auto;
 }
 
-/* Loading animation */
-.loading-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    color: #FECDA6; /* Accent color */
-    font-size: 1.2rem;
-}
-
-/* Spinner animation */
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 5px solid #8EA7E9; /* Muted Purple */
-    border-top: 5px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Project card styling */
-.project-card {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: space-between; /* Pushes the button to the bottom */
-    height: 100%; /* Ensures consistent height for all cards */
-    background: #47597E; /* Darker than background */
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-    color: #F8F9FA; /* Light text for readability */
-    text-align: left;
-}
-
-/* Hover effect for cards */
-.project-card:hover {
-    transform: scale(1.05);
-    background: #2F3E75; /* Slightly darker on hover */
-}
 
 /* Project title */
 .project-name {
@@ -88,31 +40,62 @@
     margin-bottom: 15px;
 }
 
-/* GitHub Button */
-.github-button {
+/* Ensures all project cards in a row are of equal height */
+.project-card {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #FECDA6;
-    color: #2F3E75;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    margin-top: auto; /* Ensures button stays at the bottom */
+    flex-direction: column;
+    justify-content: space-between; /* Ensures buttons stay at the bottom */
+    flex: 1; /* Makes all cards equal width */
+    min-width: 300px;
+    max-width: 100%;
+    min-height: 100%; /* Ensures cards expand to match tallest */
+    padding: 20px;
+    background: #47597E;
+    border-radius: 12px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    text-align: left;
 }
 
-/* Button hover effect */
+
+/* Ensures button container sticks to bottom */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto; /* Pushes buttons to the bottom */
+}
+
+
+/* GitHub and Live Demo buttons */
+.github-button, .live-button {
+    flex: 1; /* Makes both buttons equal width */
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* GitHub button */
+.github-button {
+    background-color: #FECDA6;
+    color: #2F3E75;
+}
+
 .github-button:hover {
     background-color: #E6B57A;
     color: white;
 }
 
-/* GitHub Icon */
-.github-icon {
-    font-size: 1.5rem; /* Bigger icon */
-    margin-right: 8px;
+/* Live Demo button */
+.live-button {
+    background-color: #8EA7E9;
+    color: white;
 }
 
+.live-button:hover {
+    background-color: #6B8DD6;
+}

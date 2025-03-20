@@ -1,82 +1,91 @@
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
-import Container from "react-bootstrap/Container";
-import Card from "react-bootstrap/Card";
+import { useEffect } from "react";
+import { Row, Col, Image, Container, Card } from "react-bootstrap";
 import "./About.css";
 
-import codingImage from "../../assets/coding_1.jpg";  
-import teamworkImage from "../../assets/coding_2.jpg";  
-import learningImage from "../../assets/coding_3.jpg";  
+import codingImage from "../../assets/coding_1.jpg";
+import teamworkImage from "../../assets/coding_2.jpg";
+import learningImage from "../../assets/coding_3.jpg";
 
 const About = () => {
+
+  useEffect(() => {
+    const fadeInElements = document.querySelectorAll(".fade-in");
+  
+    const fadeInOnScroll = () => {
+      fadeInElements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          el.classList.add("active");
+        }
+      });
+    };
+  
+    window.addEventListener("scroll", fadeInOnScroll);
+    fadeInOnScroll(); // Initial check
+    return () => window.removeEventListener("scroll", fadeInOnScroll);
+  }, []);
+
   return (
     <Container fluid className="about-section">
-      <h2 className="text-accent fw-bold text-center mb-5">About Me</h2>
+      <h2 className="text-accent fw-bold text-center mb-4">About Me</h2>
 
-      <Row className="justify-content-center">
-        <Col md={10}>
-          <Card className="about-card">
+      {/* Who Am I Section */}
+      <Row className="justify-content-center mb-4">
+        <Col xs={12} md={10}>
+          <Card className="about-card fade-in">
             <Row className="align-items-center">
-              <Col md={6}>
+              <Col xs={12} md={6}>
                 <Card.Body>
                   <h3 className="about-title">Who Am I?</h3>
                   <p className="about-text">
-                    Hey there! I'm <strong>Vipul Sawant</strong>, a web developer eager to build user-friendly applications. 
-                    I enjoy writing clean code and bringing ideas to life through development.
+                  I am <strong> Vipul Sawant </strong>, an aspiring MERN Stack Web Developer passionate about creating user-friendly and high-performing web applications. With a strong foundation in <strong> React.js, Node.js, Express.js, and MongoDB </strong>, I focus on building scalable and responsive solutions. As a fresher, I am eager to apply my skills to real-world projects and continuously enhance my expertise in modern web development.
                   </p>
                 </Card.Body>
               </Col>
-              <Col md={6}>
-                <div className="image-container">
-                  <Image src={codingImage} className="about-image" />
-                </div>
+              <Col xs={12} md={6} className="text-center">
+                <Image src={codingImage} className="about-image" />
               </Col>
             </Row>
           </Card>
         </Col>
       </Row>
 
-      <Row className="justify-content-center mt-4">
-        <Col md={10}>
-          <Card className="about-card">
+      {/* Collaboration Section */}
+      <Row className="justify-content-center mb-4">
+        <Col xs={12} md={10}>
+          <Card className="about-card fade-in">
             <Row className="align-items-center">
-              <Col md={6} className="order-md-2">
+              <Col xs={12} md={6} className="order-md-2">
                 <Card.Body>
                   <h3 className="about-title">Collaboration & Growth</h3>
                   <p className="about-text">
-                    I enjoy working with teams, discussing ideas, and solving problems together. 
-                    I believe learning from others and sharing knowledge makes projects better.
+                  I am eager to <strong>work in team environments</strong>, learn from others, and contribute to projects through problem-solving and idea-sharing. I am committed to improving my skills and growing as a <strong>web developer</strong> by actively engaging in real-world projects and collaborative experiences.
                   </p>
                 </Card.Body>
               </Col>
-              <Col md={6} className="order-md-1">
-                <div className="image-container">
-                  <Image src={teamworkImage} className="about-image" />
-                </div>
+              <Col xs={12} md={6} className="order-md-1 text-center">
+                <Image src={teamworkImage} className="about-image" />
               </Col>
             </Row>
           </Card>
         </Col>
       </Row>
 
-      <Row className="justify-content-center mt-4">
-        <Col md={10}>
-          <Card className="about-card">
+      {/* Learning Section */}
+      <Row className="justify-content-center">
+        <Col xs={12} md={10}>
+          <Card className="about-card fade-in">
             <Row className="align-items-center">
-              <Col md={6}>
+              <Col xs={12} md={6}>
                 <Card.Body>
                   <h3 className="about-title">Always Learning</h3>
                   <p className="about-text">
-                    I am always improving my skills and staying updated with new technologies. 
-                    I love exploring new tools and frameworks to enhance my development abilities.
+                  I am passionate about <strong>learning and exploring new technologies</strong>, keeping up with the latest trends in web development. I enjoy <strong>experimenting with new tools and frameworks</strong> to refine my skills and build more efficient, modern applications.
                   </p>
                 </Card.Body>
               </Col>
-              <Col md={6}>
-                <div className="image-container">
-                  <Image src={learningImage} className="about-image" />
-                </div>
+              <Col xs={12} md={6} className="text-center">
+                <Image src={learningImage} className="about-image" />
               </Col>
             </Row>
           </Card>

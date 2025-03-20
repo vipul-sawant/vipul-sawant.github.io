@@ -1,74 +1,96 @@
-/* Background & Section Styling */
+/* General Section Styling */
 .about-section {
-    padding: 60px 0;
-    background: #607EAA; /* Soft Slate Blue */
-    color: #F8F9FA; /* Light Text for Readability */
+    padding: 50px 15px;
+    background-color: #607EAA; /* Slate Blue */
+    color: #F8F9FA; /* Soft White */
     text-align: center;
 }
 
-/* Accent Color for Headings */
-.text-accent {
-    color: #FECDA6; /* Warm Beige */
-}
-
-/* Card Styling for Sections */
-.about-card {
-    background: #47597E; /* Slightly Darker for Contrast */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease-in-out;
-    color: #F8F9FA;
-    text-align: left;
-}
-
-/* Hover effect for Cards (Subtle) */
-.about-card:hover {
-    transform: scale(1.02);
-    background: #3F5170; /* Slightly Darker */
-}
-
-/* Headings Inside Cards */
+/* Section Title */
 .about-title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    color: #FECDA6;
+    color: #FFD699; /* Light Warm Beige */
 }
 
-/* About Text Styling */
-.about-text {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #F8F9FA;
+/* About Card */
+.about-card {
+    background: #3C5275 !important; /* Darker Blue for contrast */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Image Wrapper */
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
+/* Card Hover Effect */
+.about-card:hover {
+    transform: scale(1.03);
 }
 
-/* Image Styling */
+/* Responsive Image Styling */
 .about-image {
-    width: 100%;
-    height: 45vh;
-    object-fit: cover;
-    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
 }
 
-/* Responsive Adjustments */
+/* Text Styling */
+.about-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #EAECEF; /* Light Gray-White for better contrast */
+}
+
+/* Button Styling */
+.about-btn {
+    background-color: #FECDA6;
+    color: #2F3E75;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.about-btn:hover {
+    background-color: #E6B57A;
+    color: white;
+}
+
+/* Mobile-First Layout */
 @media (max-width: 768px) {
-    .about-image {
-        height: 35vh;
+    .about-card {
+        padding: 15px;
+        text-align: center;
     }
-    
+
     .about-title {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 
     .about-text {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
+
+    .about-btn {
+        width: 100%;
+    }
+}
+
+/* Animation for Fade-in Effect */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When the section is in view, it fades in */
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
 }

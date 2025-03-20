@@ -16,12 +16,19 @@ const NavbarComponent = () => {
                 <NavbarBrand as={Link} to={'/'} id='navbar-brand' >My Portfolio</NavbarBrand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="me-auto">
-                 <Nav.Link as={NavLink} to={'/'}
-                    > Home </Nav.Link>
-                    <Nav.Link as={Link} to={'/about'}>About</Nav.Link>
-                    <Nav.Link as={Link} to={'/projects'}>Projects</Nav.Link>
-                    <Nav.Link as={Link} to={'/education'}>Education</Nav.Link>
+                {/* <Nav className="me-auto"> */}
+                <Nav className="d-flex align-items-center justiy-content-center">
+                    {/* <Nav.Link as={"div"}> <NavLink className={({isActive})=>{console.log("isActive :", isActive); return (`menu-link ${isActive?"active":""}`)}}  to={'/'}> Home </NavLink> </Nav.Link>
+                    <Nav.Link as={"div"}> <NavLink className={({isActive})=>{console.log("isActive :", isActive); return (`menu-link ${isActive?"active":""}`)}}  to={'/about'}> About </NavLink> </Nav.Link>
+                    <Nav.Link as={"div"}> <NavLink className={({isActive})=>{console.log("isActive :", isActive); return (`menu-link ${isActive?"active":""}`)}}  to={'/projects'}> Projects </NavLink> </Nav.Link>
+                    <Nav.Link as={"div"}> <NavLink className={({isActive})=>{console.log("isActive :", isActive); return (`menu-link ${isActive?"active":""}`)}}  to={'/education'}> Education </NavLink> </Nav.Link> */}
+                    <Nav.Link as={NavLink} to={'/'} className={({isActive})=>{console.log("Home isActive :", isActive); return (`menu-link ${isActive?"active":""}`)}}> Home </Nav.Link>
+
+                    <Nav.Link as={NavLink} to={'/about'} className={({isActive})=>{console.log("About isActive :", isActive); return (`menu-link ${isActive?"active":""}`)}}> About </Nav.Link>
+
+                    <Nav.Link as={NavLink} to={'/projects'} className={({isActive})=>{console.log("Projects isActive :", isActive); return (`menu-link ${isActive?"active":""}`)}}> Projects </Nav.Link>
+
+                    <Nav.Link as={NavLink} to={'/education'} className={({isActive})=>{console.log("Education isActive :", isActive); return (`menu-link ${isActive?"active":""}`)}}> Education </Nav.Link>
                 </Nav>
                 
                 </Navbar.Collapse>

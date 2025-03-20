@@ -1,48 +1,79 @@
+/* Container Styling */
 .education-section {
-    padding: 50px 0;
+    padding: 50px 20px;
+    /* background: #3C5275; */
+    background: #FECDA6;
 }
 
+/* Title */
 .education-title {
-    /* color: #333; Dark gray for a simple look */
-    color: #FECDA6 !important; /* Dark gray for a simple look */
+    font-size: 2.5rem;
     font-weight: bold;
+    color: #47597E;
+    /* color: #FECDA6; */
+    margin-bottom: 40px;
+}
+
+/* Timeline Structure */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Vertical Line in the Center */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background-color: #47597E;
+    transform: translateX(-50%);
+}
+
+/* Timeline Item */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     margin-bottom: 30px;
+    position: relative;
 }
 
-/* Cards with rounded edges */
-.education-card {
-    /* background: #f8f9fa; Light background */
-    background:#3F5170 !important; /* Light background */
-    /* color: #333; */
+/* Left and Right Content */
+.timeline-content {
+    /* background: #607EAA; */
+    /* color: white; */
+    /* background-color: #FECDA6; */
     color: #FECDA6;
+    background-color:  #2F3E75;
+
     padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px !important; /* Slightly rounded edges */
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-
-    max-width: 50vw !important;
-    margin: 25px auto !important;
+    border-radius: 8px;
+    text-align: center;
+    width: 45%;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Image Styling */
+.timeline-content:hover {
+    transform: scale(1.05);
+}
+
+/* Positioning Left and Right */
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: auto;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-right: auto;
+}
+
+/* Education Image */
 .education-image {
-    width: 90px; /* Keeps it balanced */
-    height: 90px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 1px solid #ddd; /* Light border for structure */
-    background-color: white;
-}
-
-/* Typography */
-.degree {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #FECDA6;
-}
-
-.duration, .details {
-    font-size: 1rem;
-    /* color: #555; */
-    color: #FECDA6;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 50%;
 }
